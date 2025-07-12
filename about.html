@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About - Dragon Scrolls Library</title>
+  <link rel="stylesheet" href="tsa6_gamboa.css">
+  <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+  <nav class="sidebar close">
+    <header>
+      <div class="image-text">
+        <span class="image">
+          <img src="coolahdragon.png" alt="Logo">
+        </span>
+        <div class="text logo-text">
+          <span class="name">Dragon Scrolls</span>
+          <span class="subtitle">Manwha Library</span>
+        </div>
+      </div>
+      <i class='bx bx-chevron-right toggle'></i>
+    </header>
+
+    <div class="menu-bar">
+      <div class="menu">
+        <li class="search-box">
+          <a href="https://comick.io/search" target="_blank">
+            <i class='bx bx-search icon'></i>
+            <span class="text nav-text">Search</span>
+          </a>
+        </li>
+        <ul class="menu-links">
+          <li class="nav-link">
+            <a href="index.html">
+              <i class='bx bx-home-alt icon'></i>
+              <span class="text nav-text">Home</span>
+            </a>
+          </li>
+          <li class="nav-link">
+            <a href="https://comick.io/search?time=180&country=jp&sort=user_follow_count" target="_blank">
+              <i class='bx bx-book icon'></i>
+              <span class="text nav-text">Browse Manwha</span>
+            </a>
+          </li>
+          <li class="nav-link">
+            <a href="https://comick.io/search?sort=created_at" target="_blank">
+              <i class='bx bx-refresh icon'></i>
+              <span class="text nav-text">Latest Updates</span>
+            </a>
+          </li>
+          <li class="nav-link">
+            <a href="https://comick.io/user/83820e4d-8e68-48b4-978f-764f16c438ad/list" target="_blank">
+              <i class='bx bx-collection icon'></i>
+              <span class="text nav-text">My Scrolls</span>
+            </a>
+          </li>
+          <li class="nav-link">
+            <a href="https://comick.io/genres" target="_blank">
+              <i class='bx bx-purchase-tag icon'></i>
+              <span class="text nav-text">Genres</span>
+            </a>
+          </li>
+          <li class="nav-link">
+            <a href="about.html">
+              <i class='bx bx-info-circle icon'></i>
+              <span class="text nav-text">About</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="bottom-content">
+        <li><a href="#"><i class='bx bx-log-out icon'></i><span class="text nav-text">Logout</span></a></li>
+        <li class="mode">
+          <div class="sun-moon">
+            <i class='bx bx-moon icon moon'></i>
+            <i class='bx bx-sun icon sun'></i>
+          </div>
+          <span class="mode-text text">Dark mode</span>
+          <div class="toggle-switch"><span class="switch"></span></div>
+        </li>
+      </div>
+    </div>
+  </nav>
+
+  <div class="main-content">
+    <header class="top-header">
+      <div class="header-left">
+        <h1 class="page-title">About</h1>
+      </div>
+      <div class="header-right">
+        <span class="subtitle">Just a little background about this site</span>
+        <a href="#" class="icon-button"><i class='bx bx-bell icon'></i></a>
+        <a href="#" class="icon-button"><i class='bx bx-user icon'></i></a>
+      </div>
+    </header>
+
+    <section class="gallery">
+      <div style="text-align: center; margin-top: 20px;">
+        <h2 style="font-size: 28px; color: var(--text-color);">Welcome to Dragon Scrolls Library</h2>
+        <p style="font-size: 16px; color: var(--text-color);">A simple manhwa directory project for school.</p>
+      </div>
+
+      <div style="margin: 40px; font-size: 16px; color: var(--text-color); line-height: 1.6;">
+        <h2>About This Website</h2>
+        <p>
+          This website was made as part of my Web Design subject. It’s called “Dragon Scrolls Library” and it's meant to serve as a quick portal to some of my favorite manhwa on Comick.io.
+        </p>
+        <p>
+          I built it using only HTML, CSS, and a bit of JavaScript. The sidebar has links to different pages, a dark mode toggle, and a responsive layout that works even if you collapse the menu.
+        </p>
+        <p>
+          While the manhwa aren't hosted here, the site organizes everything neatly so readers can jump straight to the titles on Comick.
+        </p>
+      </div>
+
+      <div style="margin: 40px; color: var(--text-color); font-size: 16px;">
+        <h3 style="margin-bottom: 10px;">📌 Features</h3>
+        <ul style="padding-left: 20px; line-height: 1.8;">
+          <li>Responsive layout and collapsible sidebar</li>
+          <li>Dark mode toggle</li>
+          <li>Styled gallery with manhwa summaries</li>
+          <li>External links to Comick.io titles</li>
+        </ul>
+      </div>
+
+      <div style="margin: 40px; color: var(--text-color); font-size: 16px;">
+        <h3 style="margin-bottom: 10px;">🎓 Why I Made This</h3>
+        <p>This was made as a final task for our subject “Web Design with Client-Side Scripting.” It’s a way to apply what I’ve learned about layout, CSS styling, and JavaScript interactivity.</p>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-content">
+        <img src="coolahdragon.png" alt="Logo" class="footer-logo">
+        <p class="designer">Web Designer: Gabriel Anwilfred M.Gamboa</p>
+        <p class="email">Email: 202320035@fit.edu.ph</p>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    const body = document.querySelector('body'),
+          sidebar = body.querySelector('nav'),
+          toggle = body.querySelector(".toggle"),
+          modeSwitch = body.querySelector(".toggle-switch"),
+          modeText = body.querySelector(".mode-text");
+
+    toggle.addEventListener("click", () => {
+        sidebar.classList.toggle("close");
+    });
+
+    modeSwitch.addEventListener("click", () => {
+        body.classList.toggle("dark");
+        modeText.innerText = body.classList.contains("dark") ? "Light mode" : "Dark mode";
+    });
+  </script>
+</body>
+</html>
