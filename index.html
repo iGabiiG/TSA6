@@ -91,10 +91,13 @@
                 <h1 class="page-title">Dragon Scrolls Library</h1>
             </div>
             <div class="header-right">
-                <span class="subtitle">Read. Discover. Enjoy.</span>
+                <span class="subtitle">Welcome, <span id="welcome-user">Guest</span>!</span>
                 <a href="#" class="icon-button"><i class='bx bx-bell icon'></i></a>
-                <a href="#" class="icon-button"><i class='bx bx-user icon'></i></a>
-            </div>
+                <a href="login.html" class="icon-button" title="Login">
+                    <i class='bx bx-user icon'></i>
+                </a>
+                </div>
+
         </header>
 
        <section class="gallery">
@@ -150,24 +153,51 @@
         </footer>
     </div>
 
-    <script>
-        const body = document.querySelector('body'),
-              sidebar = body.querySelector('nav'),
-              toggle = body.querySelector(".toggle"),
-              searchBtn = body.querySelector(".search-box"),
-              modeSwitch = body.querySelector(".toggle-switch"),
-              modeText = body.querySelector(".mode-text");
+<script>
+  const body = document.querySelector('body'),
+        sidebar = body.querySelector('nav'),
+        toggle = body.querySelector(".toggle"),
+        searchBtn = body.querySelector(".search-box"),
+        modeSwitch = body.querySelector(".toggle-switch"),
+        modeText = body.querySelector(".mode-text");
 
-        toggle.addEventListener("click", () => {
-            sidebar.classList.toggle("close");
-        });
-        searchBtn.addEventListener("click", () => {
-            sidebar.classList.remove("close");
-        });
-        modeSwitch.addEventListener("click", () => {
-            body.classList.toggle("dark");
-            modeText.innerText = body.classList.contains("dark") ? "Light mode" : "Dark mode";
-        });
-    </script>
+  // Sidebar toggle
+  toggle.addEventListener("click", () => {
+    sidebar.classList.toggle("close");
+  });
+
+  // Open sidebar on search
+  searchBtn.addEventListener("click", () => {
+    sidebar.classList.remove("close");
+  });
+
+  // Dark mode toggle
+  modeSwitch.addEventListener("click", () => {
+    body.classList.toggle("dark");
+    modeText.innerText = body.classList.contains("dark") ? "Light mode" : "Dark mode";
+  });
+
+  // Show welcome message if user is logged in
+  const userName = localStorage.getItem("userName");
+  const welcomeUser = document.getElementById("welcome-user");
+  if (userName && welcomeUser) {
+    welcomeUser.textContent = userName;
+  }
+
+    // Handle Logout
+  const logoutBtn = document.querySelector(".bx-log-out")?.closest("a");
+  if (logoutBtn) {
+    logoutBtn.addEventListener("click", function (e) {
+      e.preventDefault(); // prevent the default anchor action
+      localStorage.removeItem("userEmail");
+      localStorage.removeItem("userPassword");
+      localStorage.removeItem("userName");
+      alert("You have been logged out.");
+      window.location.href = "login.html"; // redirect to login page
+    });
+  }
+</script>
+
+
 </body>
 </html>
